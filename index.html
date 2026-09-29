@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Praia em Projeto | Colégio Princesa Izabel</title>
+
+<style>
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root {
+    --azul-escuro: #063b5c;
+    --azul: #087db5;
+    --azul-claro: #55c9e8;
+    --areia: #fff5df;
+    --branco: #ffffff;
+    --texto: #17324a;
+    --verde: #2eae73;
+    --laranja: #f2a23a;
+    --sombra: 0 12px 35px rgba(6, 59, 92, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: #f4fbfd;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav {
+    height: 72px;
+    background: var(--azul-escuro);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+}
+
+.crest {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        white,
+        #9ee6f4
+    );
+
+    display: grid;
+    place-items: center;
+
+    color: var(--azul-escuro);
+    font-weight: 900;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navlinks button {
+    background: none;
+    color: white;
+}
+
+.pill {
+    background: white !important;
+    color: var(--azul-escuro) !important;
+
+    padding: 10px 22px;
+
+    border-radius: 999px;
+
+    font-weight: 800;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 500px;
+
+    padding: 80px 7%;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(223,247,251,.80),
+            rgba(255,255,255,.40)
+        ),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.hero-box {
+    max-width: 690px;
+}
+
+.eyebrow {
+    font-weight: 800;
+    color: var(--azul);
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5.7rem);
+
+    line-height: .92;
+
+    margin: 12px 0;
+
+    color: var(--azul-escuro);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    margin-top: 28px;
+}
+
+.primary,
+.secondary {
+    padding: 14px 24px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+}
+
+.primary {
+    background: var(--azul);
+    color: white;
+}
+
+.secondary {
+    background: white;
+    color: var(--azul-escuro);
+
+    box-shadow: var(--sombra);
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 2.3rem;
+    margin: 0;
+}
+
+.muted {
+    color: #668093;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.card {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: var(--sombra);
+
+    border: 1px solid #dceff5;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 18px;
+}
+
+.tag {
+    display: inline-block;
+
+    background: #e4f7fb;
+
+    color: var(--azul);
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: .78rem;
+
+    font-weight: 800;
+}
+
+.card h3 {
+    margin: 12px 0 6px;
+}
+
+/* =========================
+   ONDA
+========================= */
+
+.wave {
+    height: 45px;
+
+    background: var(--areia);
+
+    clip-path: polygon(
+        0 45%,
+        10% 25%,
+        20% 48%,
+        30% 15%,
+        40% 45%,
+        50% 20%,
+        60% 50%,
+        70% 18%,
+        80% 48%,
+        90% 22%,
+        100% 45%,
+        100% 100%,
+        0 100%
+    );
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login {
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff8fc,
+            #fff5df
+        );
+}
+
+.loginbox {
+    width: min(460px, 100%);
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(6, 59, 92, .15);
+}
+
+.loginbox h1 {
+    text-align: center;
+    color: var(--azul-escuro);
+}
+
+.roles {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin: 20px 0;
+}
+
+.role {
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background: #edf7fa;
+}
+
+.role.selected {
+    background: var(--azul);
+    color: white;
+}
+
+.hint {
+    background: #eef9fc;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: .85rem;
+}
+
+/* =========================
+   FORMULÁRIOS
+========================= */
+
+.form {
+    display: grid;
+    gap: 14px;
+}
+
+.form label {
+    font-weight: 800;
+}
+
+.form input,
+.form select,
+.form textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 6px;
+
+    border: 1px solid #cfe3ea;
+
+    border-radius: 10px;
+
+    background: white;
+}
+
+.form textarea {
+    resize: vertical;
+}
+
+/* =========================
+   SISTEMA INTERNO
+========================= */
+
+.app {
+    display: none;
+
+    min-height:
+        calc(100vh - 72px);
+}
+
+.sidebar {
+    width: 245px;
+
+    background: var(--azul-escuro);
+
+    color: white;
+
+    padding: 25px;
+
+    position: fixed;
+
+    top: 72px;
+    bottom: 0;
+}
+
+.sidebtn {
+    display: block;
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 5px 0;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: white;
+
+    text-align: left;
+}
+
+.sidebtn:hover,
+.sidebtn.active {
+    background: #0b6f9f;
+}
+
+.main {
+    margin-left: 245px;
+
+    padding: 40px 5%;
+}
+
+.topline {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    align-items: center;
+}
+
+/* =========================
+   ESTATÍSTICAS
+========================= */
+
+.statgrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.stat {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 16px;
+
+    box-shadow: var(--sombra);
+}
+
+.stat strong {
+    font-size: 2rem;
+
+    color: var(--azul);
+}
+
+/* =========================
+   TURMAS
+========================= */
+
+.classgrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.classbtn {
+    background: white;
+
+    border: 2px solid #d9eef4;
+
+    padding: 24px;
+
+    border-radius: 15px;
+
+    color: var(--azul-escuro);
+
+    font-weight: 900;
+
+    font-size: 1.1rem;
+
+    transition: .2s;
+}
+
+.classbtn:hover {
+    border-color: var(--azul);
+
+    transform: translateY(-2px);
+}
+
+/* =========================
+   PAINEL
+========================= */
+
+.panel {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow: var(--sombra);
+}
+
+/* =========================
+   PROJETOS
+========================= */
+
+.projectrow {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 16px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 120px 110px 100px;
+
+    gap: 15px;
+
+    align-items: center;
+
+    margin: 10px 0;
+
+    box-shadow: var(--sombra);
+}
+
+.status {
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: .78rem;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+.approved {
+    background: #ddf7ea;
+    color: #16804e;
+}
+
+.pending {
+    background: #fff0d8;
+    color: #a86100;
+}
+
+.review {
+    background: #e2f1ff;
+    color: #126da1;
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.back {
+    background: none;
+
+    color: var(--azul);
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--azul-escuro);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 7%;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media(max-width: 900px) {
+
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .classgrid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .navlinks {
+        display: none;
+    }
+
+    .sidebar {
+        width: 190px;
+    }
+
+    .main {
+        margin-left: 190px;
+    }
+
+    .projectrow {
+        grid-template-columns:
+            1fr 90px;
+    }
+}
+
+@media(max-width: 620px) {
+
+    .hero {
+        padding: 55px 6%;
+    }
+
+    .cards,
+    .classgrid,
+    .statgrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+
+        width: 100%;
+
+        display: flex;
+
+        overflow-x: auto;
+
+        gap: 5px;
+    }
+
+    .sidebtn {
+        white-space: nowrap;
+
+        width: auto;
+    }
+
+    .main {
+        margin-left: 0;
+
+        padding: 25px 5%;
+    }
+
+    .projectrow {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     PÁGINA PRINCIPAL
+===================================================== -->
+
+<div id="home">
+
+<nav class="nav">
+
+    <div class="brand">
+
+        <div class="crest">
+            PI
+        </div>
+
+        <span>
+            Colégio Estadual Cívico Militar<br>
+            Princesa Izabel
+        </span>
+
+    </div>
+
+
+    <div class="navlinks">
+
+        <button onclick="scrollToId('projetos')">
+            Projetos
+        </button>
+
+        <button onclick="scrollToId('turmas')">
+            Turmas
+        </button>
+
+        <button onclick="showLogin()">
+            Entrar
+        </button>
+
+        <button
+            class="pill"
+            onclick="showLogin()"
+        >
+            Área escolar
+        </button>
+
+    </div>
+
+</nav>
+
+
+<header class="hero">
+
+    <div class="hero-box">
+
+        <div class="eyebrow">
+            Educação • Criatividade • Praia
+        </div>
+
+        <h1>
+            Praia em Projeto
+        </h1>
+
+        <p>
+            Projetos que transformam conhecimento
+            em experiências.
+            Um espaço para os alunos do
+            Colégio Estadual Cívico Militar
+            Princesa Izabel apresentarem
+            seus trabalhos.
+        </p>
+
+        <div class="actions">
+
+            <button
+                class="primary"
+                onclick="showLogin()"
+            >
+                Entrar na plataforma
+            </button>
+
+            <button
+                class="secondary"
+                onclick="scrollToId('projetos')"
+            >
+                Conheça os projetos
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="wave"></div>
+
+
+<!-- PROJETOS -->
+
+<section id="projetos">
+
+    <div class="section-title">
+
+        <h2>
+            Projetos em destaque
+        </h2>
+
+        <p class="muted">
+            Ideias desenvolvidas em sala de aula
+            e compartilhadas pela comunidade escolar.
+        </p>
+
+    </div>
+
+
+    <div
+        class="cards"
+        id="featured"
+    ></div>
+
+</section>
+
+
+<!-- TURMAS -->
+
+<section
+    id="turmas"
+    style="background:#fff"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Explore por turma
+        </h2>
+
+        <p class="muted">
+            Selecione uma turma para conhecer
+            seus projetos.
+        </p>
+
+    </div>
+
+
+    <div
+        class="classgrid"
+        id="publicClasses"
+    ></div>
+
+</section>
+
+
+<footer>
+
+    <strong>
+        Praia em Projeto
+    </strong>
+
+    <br>
+
+    Colégio Estadual Cívico Militar
+    Princesa Izabel
+
+    <br><br>
+
+    <small>
+        Protótipo visual da plataforma escolar.
+    </small>
+
+</footer>
+
+</div>
+
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<div
+    id="login"
+    style="display:none"
+    class="login"
+>
+
+<div class="loginbox">
+
+    <button
+        class="back"
+        onclick="showHome()"
+    >
+        ← Voltar
+    </button>
+
+
+    <h1>
+        🌊 Praia em Projeto
+    </h1>
+
+
+    <p style="text-align:center">
+        Acesse sua conta escolar
+    </p>
+
+
+    <div class="roles">
+
+        <button
+            class="role selected"
+            id="rAluno"
+            onclick="setRole('Aluno')"
+        >
+            Aluno
+        </button>
+
+        <button
+            class="role"
+            id="rProfessor"
+            onclick="setRole('Professor')"
+        >
+            Professor
+        </button>
+
+        <button
+            class="role"
+            id="rAdministrador"
+            onclick="setRole('Administrador')"
+        >
+            Admin
+        </button>
+
+    </div>
+
+
+    <div class="form">
+
+        <input
+            id="email"
+            type="email"
+            placeholder="seu.nome@escola.pr.gov.br"
+        >
+
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Sua senha"
+        >
+
+
+        <button
+            class="primary"
+            onclick="login()"
+        >
+            Entrar
+        </button>
+
+    </div>
+
+
+    <p class="hint">
+
+        Protótipo:
+        qualquer e-mail com domínio
+        <b>@escola.pr.gov.br</b>
+        pode entrar.
+
+        <br><br>
+
+        Não use senhas reais neste protótipo.
+
+    </p>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     SISTEMA INTERNO
+===================================================== -->
+
+<div
+    id="app"
+    class="app"
+>
+
+
+<!-- MENU LATERAL -->
+
+<aside class="sidebar">
+
+    <h3>
+        🌴 PRAIA EM PROJETO
+    </h3>
+
+
+    <button
+        class="sidebtn active"
+        onclick="dashboard()"
+    >
+        ⌂ Início
+    </button>
+
+
+    <button
+        class="sidebtn"
+        onclick="myProjects()"
+    >
+        ▣ Meus projetos
+    </button>
+
+
+    <button
+        class="sidebtn"
+        onclick="newProject()"
+    >
+        ＋ Enviar projeto
+    </button>
+
+
+    <button
+        class="sidebtn"
+        onclick="classesPage()"
+    >
+        ◈ Turmas
+    </button>
+
+
+    <button
+        class="sidebtn"
+        onclick="profile()"
+    >
+        ◎ Meu perfil
+    </button>
+
+
+    <button
+        class="sidebtn"
+        onclick="showHome()"
+    >
+        ↪ Sair
+    </button>
+
+</aside>
+
+
+<!-- CONTEÚDO -->
+
+<main
+    class="main"
+    id="appContent"
+></main>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   TURMAS
+===================================================== */
+
+const classes = [
+
+    "8º A",
+    "8º B",
+    "8º C",
+
+    "9º A",
+    "9º B",
+    "9º C",
+    "9º D",
+
+    "1º A",
+    "1º B",
+    "1º C",
+
+    "2º A",
+    "2º B",
+    "2º C"
+
+];
+
+
+/* =====================================================
+   PROJETOS DE EXEMPLO
+===================================================== */
+
+let projects = [
+
+    {
+        title: "Preservação das Praias",
+        author: "Maria Eduarda Santos",
+        class: "9º B",
+        theme: "Meio ambiente",
+        status: "Aprovado",
+        date: "12/09/2026"
+    },
+
+    {
+        title: "Turismo Sustentável",
+        author: "Lucas Ferreira",
+        class: "1º A",
+        theme: "Turismo",
+        status: "Em análise",
+        date: "05/09/2026"
+    },
+
+    {
+        title: "Impactos do Lixo no Mar",
+        author: "Ana Clara Souza",
+        class: "8º C",
+        theme: "Meio ambiente",
+        status: "Aprovado",
+        date: "28/08/2026"
+    },
+
+    {
+        title: "Cultura e Turismo no Litoral",
+        author: "Gabriel Lima",
+        class: "2º B",
+        theme: "Cultura",
+        status: "Pendente",
+        date: "20/08/2026"
+    }
+
+];
+
+
+/* =====================================================
+   IMAGENS
+===================================================== */
+
+const pics = [
+
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80",
+
+    "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=700&q=80",
+
+    "https://images.unsplash.com/photo-1544550285-f813152fb2fd?auto=format&fit=crop&w=700&q=80",
+
+    "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=80"
+
+];
+
+
+let role = "Aluno";
+
+let currentUser = "";
+
+
+/* =====================================================
+   NAVEGAÇÃO
+===================================================== */
+
+function scrollToId(id) {
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =====================================================
+   MOSTRAR LOGIN
+===================================================== */
+
+function showLogin() {
+
+    document.getElementById("home")
+        .style.display = "none";
+
+    document.getElementById("login")
+        .style.display = "grid";
+
+    document.getElementById("app")
+        .style.display = "none";
+
+}
+
+
+/* =====================================================
+   VOLTAR PARA HOME
+===================================================== */
+
+function showHome() {
+
+    document.getElementById("home")
+        .style.display = "block";
+
+    document.getElementById("login")
+        .style.display = "none";
+
+    document.getElementById("app")
+        .style.display = "none";
+
+}
+
+
+/* =====================================================
+   ESCOLHER PERFIL
+===================================================== */
+
+function setRole(selectedRole) {
+
+    role = selectedRole;
+
+
+    document
+        .getElementById("rAluno")
+        .classList
+        .toggle(
+            "selected",
+            selectedRole === "Aluno"
+        );
+
+
+    document
+        .getElementById("rProfessor")
+        .classList
+        .toggle(
+            "selected",
+            selectedRole === "Professor"
+        );
+
+
+    document
+        .getElementById("rAdministrador")
+        .classList
+        .toggle(
+            "selected",
+            selectedRole === "Administrador"
+        );
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function login() {
+
+    const email =
+        document
+        .getElementById("email")
+        .value
+        .trim();
+
+
+    if (
+        !email.endsWith("@escola.pr.gov.br")
+    ) {
+
+        alert(
+            "Use um e-mail institucional @escola.pr.gov.br"
+        );
+
+        return;
+    }
+
+
+    currentUser =
+        email.split("@")[0];
+
+
+    document.getElementById("login")
+        .style.display = "none";
+
+
+    document.getElementById("home")
+        .style.display = "none";
+
+
+    document.getElementById("app")
+        .style.display = "block";
+
+
+    dashboard();
+
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+function dashboard() {
+
+    document
+        .getElementById("appContent")
+        .innerHTML = `
+
+        <div class="topline">
+
+            <div>
+
+                <p class="eyebrow">
+                    Área ${role.toLowerCase()}
+                </p>
+
+                <h1>
+                    Olá, ${currentUser || "aluno"}! 👋
+                </h1>
+
+                <p class="muted">
+                    Aqui você pode visualizar,
+                    enviar e acompanhar projetos.
+                </p>
+
+            </div>
+
+            <button
+                class="primary"
+                onclick="newProject()"
+            >
+                ＋ Novo projeto
+            </button>
+
+        </div>
+
+
+        <div class="statgrid">
+
+            <div class="stat">
+
+                <span>
+                    Minha turma
+                </span>
+
+                <br>
+
+                <strong>
+                    9º B
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>
+                    Projetos enviados
+                </span>
+
+                <br>
+
+                <strong>
+                    2
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>
+                    Em análise
+                </span>
+
+                <br>
+
+                <strong>
+                    1
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>
+                Meus últimos projetos
+            </h2>
+
+            ${
+                projects
+                .slice(0, 3)
+                .map(projectCard)
+                .join("")
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   CARD DE PROJETO
+===================================================== */
+
+function projectCard(project, index = 0) {
+
+    let statusClass = "pending";
+
+
+    if (
+        project.status === "Aprovado"
+    ) {
+
+        statusClass = "approved";
+
+    }
+
+
+    if (
+        project.status === "Em análise"
+    ) {
+
+        statusClass = "review";
+
+    }
+
+
+    return `
+
+        <div
+            style="
+            display:flex;
+            gap:15px;
+            align-items:center;
+            padding:12px 0;
+            border-bottom:1px solid #e5f0f3;
+            "
+        >
+
+            <img
+                src="${pics[index % pics.length]}"
+                style="
+                width:95px;
+                height:65px;
+                object-fit:cover;
+                border-radius:10px;
+                "
+            >
+
+
+            <div style="flex:1">
+
+                <b>
+                    ${project.title}
+                </b>
+
+                <div class="muted">
+
+                    ${project.class}
+                    •
+                    ${project.theme}
+                    •
+                    ${project.date}
+
+                </div>
+
+            </div>
+
+
+            <span
+                class="status ${statusClass}"
+            >
+                ${project.status}
+            </span>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   MEUS PROJETOS
+===================================================== */
+
+function myProjects() {
+
+    document
+        .getElementById("appContent")
+        .innerHTML = `
+
+        <div class="topline">
+
+            <div>
+
+                <h1>
+                    Meus projetos
+                </h1>
+
+                <p class="muted">
+                    Acompanhe os trabalhos enviados por você.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary"
+                onclick="newProject()"
+            >
+                ＋ Enviar projeto
+            </button>
+
+        </div>
+
+
+        <div class="panel">
+
+            ${
+                projects
+                .map(projectCard)
+                .join("")
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   PÁGINA DE TURMAS
+===================================================== */
+
+function classesPage() {
+
+    document
+        .getElementById("appContent")
+        .innerHTML = `
+
+        <h1>
+            Turmas
+        </h1>
+
+        <p class="muted">
+            Selecione uma turma para acessar os projetos publicados.
+        </p>
+
+
+        <div class="classgrid">
+
+            ${
+                classes
+                .map(
+                    turma => `
+
+                    <button
+                        class="classbtn"
+                        onclick="classProjects('${turma}')"
+                    >
+
+                        ${turma}
+
+                        <br>
+
+                        <small>
+                            Ver projetos →
+                        </small>
+
+                    </button>
+
+                    `
+                )
+                .join("")
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   PROJETOS DA TURMA
+===================================================== */
+
+function classProjects(turma) {
+
+    const turmaProjects =
+        projects.filter(
+            project =>
+                project.class === turma
+        );
+
+
+    document
+        .getElementById("appContent")
+        .innerHTML = `
+
+        <button
+            class="back"
+            onclick="classesPage()"
+        >
+            ← Voltar para turmas
+        </button>
+
+
+        <h1>
+            Projetos da turma ${turma}
+        </h1>
+
+
+        <div class="panel">
+
+            ${
+                turmaProjects.length
+
+                ?
+
+                turmaProjects
+                    .map(projectCard)
+                    .join("")
+
+                :
+
+                `
+                    <p class="muted">
+                        Ainda não há projetos
+                        publicados nesta turma.
+                    </p>
+                `
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   NOVO PROJETO
+===================================================== */
+
+function newProject() {
+
+    document
+        .getElementById("appContent")
+        .innerHTML = `
+
+        <button
+            class="back"
+            onclick="dashboard()"
+        >
+            ← Voltar
+        </button>
+
+
+        <h1>
+            Enviar novo projeto
+        </h1>
+
+
+        <div class="panel form">
+
+
+            <label>
+
+                Título do projeto
+
+                <input
+                    id="ptitle"
+                    placeholder="Ex.: Preservação das Praias"
+                >
+
+            </label>
+
+
+            <label>
+
+                Turma
+
+                <select id="pclass">
+
+                    ${
+                        classes
+                        .map(
+                            turma =>
+                            `<option>${turma}</option>`
+                        )
+                        .join("")
+                    }
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Tema
+
+                <select id="ptheme">
+
+                    <option>
+                        Meio ambiente
+                    </option>
+
+                    <option>
+                        Turismo
+                    </option>
+
+                    <option>
+                        Cultura
+                    </option>
+
+                    <option>
+                        Ciências
+                    </option>
+
+                    <option>
+                        História
+                    </option>
+
+                    <option>
+                        Geografia
+                    </option>
+
+                    <option>
+                        Outro
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Descrição
+
+                <textarea
+                    id="pdesc"
+                    rows="6"
+                    placeholder="Escreva um resumo do seu projeto..."
+                ></textarea>
+
+            </label>
+
+
+            <label>
+
+                Arquivo do projeto
+
+                <input
+                    id="pfile"
+                    type="file"
+                    accept="
+                    .pdf,
+                    .doc,
+                    .docx,
+                    .ppt,
+                    .pptx,
+                    .jpg,
+                    .jpeg,
+                    .png,
+                    .mp4
+                    "
+                >
+
+            </label>
+
+
+            <button
+                class="primary"
+                onclick="submitProject()"
+            >
+                Enviar projeto
+            </button>
+
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   ENVIAR PROJETO
+===================================================== */
+
+function submitProject() {
+
+    const title =
+        document
+        .getElementById("ptitle")
+        .value
+        .trim();
+
+
+    if (!title) {
+
+        alert(
+            "Digite o título do projeto."
+        );
+
+        return;
+
+    }
+
+
+    const turma =
+        document
+        .getElementById("pclass")
+        .value;
+
+
+    const tema =
+        document
+        .getElementById("ptheme")
+        .value;
+
+
+    projects.unshift({
+
+        title: title,
+
+        author:
+            currentUser || "Aluno",
+
+        class: turma,
+
+        theme: tema,
+
+        status: "Em análise",
+
+        date:
+            new Date()
+            .toLocaleDateString("pt-BR")
+
+    });
+
+
+    alert(
+        "Projeto enviado com sucesso! " +
+        "Ele ficará em análise até a aprovação do professor."
+    );
+
+
+    dashboard();
+
+}
+
+
+/* =====================================================
+   PERFIL
+===================================================== */
+
+function profile() {
+
+    document
+        .getElementById("appContent")
+        .innerHTML = `
+
+        <h1>
+            Meu perfil
+        </h1>
+
+
+        <div class="panel">
+
+            <p>
+                <b>Usuário:</b>
+                ${currentUser}
+            </p>
+
+
+            <p>
+                <b>Perfil:</b>
+                ${role}
+            </p>
+
+
+            <p>
+                <b>E-mail:</b>
+                ${currentUser}@escola.pr.gov.br
+            </p>
+
+
+            <p>
+                <b>Turma:</b>
+                ${
+                    role === "Aluno"
+                    ?
+                    "9º B"
+                    :
+                    "Acesso às turmas"
+                }
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   PROJETOS DA PÁGINA INICIAL
+===================================================== */
+
+document
+    .getElementById("featured")
+    .innerHTML =
+
+    projects
+    .map(
+        (project, index) => `
+
+        <article class="card">
+
+            <img
+                src="${pics[index % pics.length]}"
+            >
+
+
+            <div class="card-body">
+
+                <span class="tag">
+                    ${project.theme}
+                </span>
+
+
+                <h3>
+                    ${project.title}
+                </h3>
+
+
+                <p class="muted">
+
+                    ${project.author}
+                    •
+                    ${project.class}
+
+                </p>
+
+            </div>
+
+        </article>
+
+        `
+    )
+    .join("");
+
+
+/* =====================================================
+   TURMAS DA PÁGINA INICIAL
+===================================================== */
+
+document
+    .getElementById("publicClasses")
+    .innerHTML =
+
+    classes
+    .map(
+        turma => `
+
+        <button
+            class="classbtn"
+            onclick="showLogin()"
+        >
+
+            ${turma}
+
+        </button>
+
+        `
+    )
+    .join("");
+
+
+</script>
+
+</body>
+</html>
